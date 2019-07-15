@@ -1,0 +1,29 @@
+def __main__():
+
+# VPO Info from User
+
+    userinput = input("please input VPO number: \n") + '_'
+    userlocationcode = input("please input location code: \n")
+
+    path = 'I:/hdmxdata/prod//' + userinput + userlocationcode + '//1A' # 1A should be a variable containing all steps (1A, 1B, 1C)
+    # localpath = 'C:\Users\saharsa\Desktop\Test_Folder'
+
+## TODO: defualt input if user doesn't know location code: 6262, 6197, 6212 etc..
+
+
+    fileOpen = open(path, 'r')
+    text = fileOpen.read()
+    fileOpen.close()
+
+    # with open(localpath) as fw:
+    #     Copy ITAF Output to local file
+
+    with open(path, 'r') as text:
+        searchlines = text.readlines()
+    for i, line in enumerate(searchlines):
+        if '4_begindt' in line:
+            for I in searchlines[i:i+1]: # [i:i+1] = ?
+                print(I)
+   # Add file not found error
+
+__main__()
